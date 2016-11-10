@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<% if notice != nil %>
+  <p id="notice" class="alert alert-success" role="alert">
+    <%= notice %>
+  </p>
+<% end %>
+
+<h1 class="bioRhyme">Students</h1>
+
+<p>
+<%= link_to 'New Student', new_student_path, class: "btn btn-success" %></p>
+</p>
+
+<ul class="nav nav-pills" role="tablist">
+<li> <%= link_to "All", students_path %></li>
+
+ <% @my_students.each do |student| %>
+  <li> <%= link_to student, students_path(student: student)  %></li>
+  <% end %>
+</ul>
+
+
+  <tbody>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.name %></td>
+        <td><%= student.year %></td>
+        <td><%= student.score %></td>
+        <td><%= student.grade %></td>
+        <td><%= link_to 'Show', student %></td>
+        <td><%= link_to 'Edit', edit_student_path(student) %></td>
+        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Student', new_student_path %>

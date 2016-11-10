@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<% if notice != nil %>
+  <p id="notice" class="alert alert-success" role="alert">
+    <%= notice %>
+  </p>
+<% end %>
+
+<h1 class="bioRhyme">Pets</h1>
+
+<p>
+<%= link_to 'New Pet', new_pet_path, class: "btn btn-success" %></p>
+</p>
+
+
+<ul class="nav nav-pills" role="tablist">
+<li> <%= link_to "All", pets_path %></li>
+
+ <% @my_pets.each do |pet| %>
+  <li> <%= link_to pet, pets_path(pet: pet)  %></li>
+  <% end %>
+</ul>
+
+
+
+
+<div class="row">
+  <% @pets.each do |pet| %>
+      <div class="col-md-4">
+        <div class="well">
+
+        <h2 class="bioRhyme"><%= "#{pet.name}, #{pet.age}" %></h2>
+        <h2 class="bioRhyme"><%= "#{pet.species}, #{pet.sex}" %></h2>
+          <h2 class="bioRhyme"><%= "#{pet.color}" %></h2>
+        <p class="bioRhyme"><%= pet.description %></p>
+        <p class="bioRhyme"><%= link_to 'Show', pet, class: "btn btn-info" %>
+        <%= link_to 'Edit', edit_pet_path(pet), class: "btn btn-warning" %>
+        <%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></p>
+      </div>
+  <% end %>
+

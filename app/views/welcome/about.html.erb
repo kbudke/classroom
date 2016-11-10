@@ -1,0 +1,19 @@
+<style type="text/css">
+body {
+	color: <%=@color %>;
+	}
+	</style>
+
+
+<h1 class="bioRhyme">About the classroom</h1>
+<p class="bioRhyme">Info about Classroom ect..</p>
+<p class="bioRhyme">More info just for inspection purposes.</p
+
+
+
+		<p>
+<%= link_to "Green", about_path(color: "green"), class: "btn btn-success" %>
+<%= link_to "Blue", about_path(color: "blue"), class: "btn btn-primary" %>
+<%= link_to "Pink", about_path(color: "pink"), class: "btn btn-danger" %>
+<%= link_to "Black", about_path(color: "black"), class: "btn btn-default" %>
+</p>

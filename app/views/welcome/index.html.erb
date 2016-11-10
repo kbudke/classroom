@@ -1,0 +1,22 @@
+<style type="text/css/bioRhyme">
+body {
+	color: <%=@color %>;
+	}
+	</style>
+
+
+<h1 class="bioRhyme">Home Page</h1>
+<p class="bioRhyme">Home page of the classroom</p>
+<p class="bioRhyme">another paragraph just for looks gotta see the looks after all.</p>
+
+<h2 class="bioRhyme">next section to talk about!</h2>
+
+<p class="bioRhyme">more more more more can't get enough</p>
+
+
+		<p>
+<%= link_to "Green", root_path(color: "green"), class: "btn btn-success" %>
+<%= link_to "Blue", root_path(color: "blue"), class: "btn btn-primary" %>
+<%= link_to "Pink", root_path(color: "pink"), class: "btn btn-danger" %>
+<%= link_to "Black", root_path(color: "black"), class: "btn btn-default" %>
+</p>
